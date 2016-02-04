@@ -1,21 +1,47 @@
-//: Playground - noun: a place where people can play
+//: Quick example of optionals using if let and guard
 
 import Cocoa
 
 var str = "Hello, playground"
 
 var someNum: Int?
-
-someNum = 4
+var someString: String?
 
 if let otherNum = someNum {
-    print("true")
+    print("success")
 } else {
     print("nil")
 }
 
-var sum = 0
+someNum = 0
 
-for value in 0...15 {
-    sum += value
+if let otherNum = someNum {
+    print("success")
+} else {
+    
+    print("nil")
 }
+
+
+func guardFail() {
+    guard let otherString = someString else {
+        print("failure")
+        return
+    }
+    print("success")
+}
+
+func guardSucceed() {
+    someString = "Hello World"
+    
+    guard let otherString = someString else {
+        print("failure")
+        return
+    }
+    print("success")
+}
+
+guardFail()
+guardSucceed()
+
+
